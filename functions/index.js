@@ -10,7 +10,7 @@ exports.sendEmailNotification=functions.firestore.document('submissions/{docId}'
 .onCreate((snap,ctx)=>{
     const data=snap.data();
     let authData=nodemailer.createTransport({
-        host:'smtp.gmail.com',
+        host:'kanishkabc123@gmail.com',
         port:465,
         secure:true,
         auth:{
@@ -19,7 +19,7 @@ exports.sendEmailNotification=functions.firestore.document('submissions/{docId}'
         }
     });
 authData.sendMail({
-from :'info.truly@makethatapp.com',
+from :'kanishkabc123@gmail.com',
 to:`${data.email}`,
 subject:'Your submission Info',
 text:`${data.email}`,
